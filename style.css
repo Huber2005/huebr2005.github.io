@@ -124,6 +124,11 @@ transform: rotateY(180deg);
   #container{
     width: 89%;
   }
+  .card .back img{
+    display: block;
+    height: 35px;
+    margin: 35% auto;
+  }
 }
 
 

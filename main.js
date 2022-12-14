@@ -18,6 +18,11 @@ const card14 = document.querySelector(".c14 .back img");
 const card15 = document.querySelector(".c15 .back img");
 const card16 = document.querySelector(".c16 .back img");
 function shuffleCard(){
+    cards.forEach(card => {
+        card.classList.remove("flip")
+    });
+    matched = 0;
+    disableDeck = false;
     for (let y = 0; y < 4; y++){
         arr[y] = []
         for (let x = 0; x < 4; x++){
@@ -89,6 +94,9 @@ for (let y = 0; y < 4; y++){
             card16.src = imagecard
         }
     }}
+    cards.forEach(card => {
+        card.addEventListener("click", flipCard)
+    });
 }
  
 function randomess(){
