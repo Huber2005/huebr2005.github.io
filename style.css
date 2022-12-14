@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+body{
+  margin:0;
+  height: 100vh; 
+  border: 0px !important;
+  background: linear-gradient(160deg,#6362ef,#6a6af6,#3d3db0);
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+#container{
+  background: whitesmoke;
+  margin: 0 auto 0 auto;
+  position: relative;
+  top: 20%;
+  box-sizing: border-box;
+  width: 500px;
+  height: 50%;
+  border-radius: 5px;
+  box-shadow: 3.5px 3px rgba(0, 0, 0, 0.374);
+  display: grid;
+  padding: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  
+}
+
+#container .card{
+  position: relative;
+  background-color: whitesmoke;
+  box-shadow: -3.5px 3px 6px 0.5px #0000002e;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+
+
+.shake {
+  outline: 1px double rgba(255, 72, 72, 0.22);
+  animation: shake 0.35s ease-in-out;
+}
+
+.shake{
+  background-color: rgba(234, 114, 114, 0.083) !important;
+  box-shadow: -3.5px 3px 6px 0.5px #770c0c2e !important;
+}
+@keyframes shake {
+  0%, 100%{
+    transform: translateX(0);
+  }
+  20%{
+    transform: translateX(-13px);
+  }
+  40%{
+    transform: translateX(13px);
+  }
+  60%{
+    transform: translateX(-8px);
+  }
+  80%{
+    transform: translateX(8px);
+  }
+}
+
+#container .card:hover{
+  cursor: pointer;
+  box-shadow: -3.5px 3px 6px 0.5px #0000004a;
+}
+
+.card .view{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 0.2s ease;
+}
+
+/* Backside */
+.card .back img{
+  display: block;
+  height: 50px;
+  margin: 25% auto;
+}
+
+/* Frontside */
+.card .front i{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+  font-size: 35px;
+  pointer-events: none;
+  color: #6c60eb;
+}
+
+.back,.front{
+  pointer-events: none;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/*Default position of the backside of the card*/
+.card .back{
+transform: rotateY(180deg);
+}
+
+/*Change side when card is pressed*/
+.card.flip .back{
+transform: rotateY(0);
+}
+
+.card.flip .front{
+transform: rotateY(180deg);
+}
+
+@media (max-width: 500px){
+  #container .card{
+    height: 75%;
+    width: 75%;
+  }
+  #container{
+    width: 89%;
+  }
+}
+
+
