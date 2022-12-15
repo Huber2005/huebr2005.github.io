@@ -15,7 +15,7 @@ body{
   background: whitesmoke;
   margin: 0 auto 0 auto;
   width: 500px;
-  height: 55vh;
+  height: 57vh;
   padding: 30px 30px 10px 30px;
   box-shadow: 3.5px 3px #0000005f;
 }
@@ -23,7 +23,7 @@ body{
 #container .cards{
   margin: 0 auto 0 auto;
   width: 500px;
-  height: 80%;
+  height: 42vh;
   border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -35,8 +35,8 @@ body{
   position: relative;
   background-color: whitesmoke;
   box-shadow: -3.5px 3px 6px 0.5px #0000002e;
-  width: 90px;
-  height: 90px;
+  width: 80%;
+  height: 10vh;
   margin: 0 auto;
   transition: all 0.5s ease;
 }
@@ -126,9 +126,7 @@ body{
 
 /* Backside */
 .card .back img{
-  display: block;
-  height: 50px;
-  margin: 25% auto;
+  max-height: 50px;
 }
 
 /* Frontside */
@@ -153,6 +151,9 @@ body{
 /*Default position of the backside of the card*/
 .card .back{
 transform: rotateY(180deg);
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 /*Change side when card is pressed*/
@@ -170,10 +171,10 @@ transform: rotateY(180deg);
   }
   #container .cards{
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 250px;
+    width: 300px;
   }
   #container .cards .card{
-    width: 75%;
+    width: 80%;
     height: 75%;
   }
   #container .cards .card .front i{

@@ -21,9 +21,10 @@ function shuffleCard(){
     cards.forEach(card => {
         card.classList.remove("flip")
     });
+    cardOne = "";
+    cardTwo = "";
     accuracy = 0;
     errorspan.textContent = 0
-    accuracyspan.textContent = 100
     errors = 0;
     matched = 0;
     disableDeck = false;
