@@ -19,7 +19,7 @@ const card15 = document.querySelector(".c15 .back img");
 const card16 = document.querySelector(".c16 .back img");
 function shuffleCard(){
     cards.forEach(card => {
-        card.classList.remove("flip")
+        card.classList.remove("flip","shake")
     });
     cardOne = "";
     cardTwo = "";
