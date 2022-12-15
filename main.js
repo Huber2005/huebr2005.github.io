@@ -175,7 +175,7 @@ function matchCards(img1, img2) {
     errors++
     errorspan.textContent = errors.toString()
 
-    accuracy =  ((matched ) / (errors  + (matched ))* 10);
+    accuracy =  ((matched ) / (errors  + (matched ))* 100);
     accuracyspan.textContent = Math.floor(accuracy)
     setTimeout(() => {
         cardOne.classList.add("shake");
