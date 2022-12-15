@@ -158,7 +158,7 @@ function matchCards(img1, img2) {
         right.play()
         matched++;
         
-        accuracy =  ((matched * 2) / (errors  + (matched * 2))* 100);
+        accuracy =  ((matched) / (errors  + (matched))* 100);
         accuracyspan.textContent = Math.floor(accuracy)
         if(matched == 8) {
             allRight.play()
@@ -175,7 +175,7 @@ function matchCards(img1, img2) {
     errors++
     errorspan.textContent = errors.toString()
 
-    accuracy =  ((matched * 2) / (errors  + (matched * 2))* 100);
+    accuracy =  ((matched ) / (errors  + (matched ))* 10);
     accuracyspan.textContent = Math.floor(accuracy)
     setTimeout(() => {
         cardOne.classList.add("shake");
