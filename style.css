@@ -182,7 +182,6 @@ transform: rotateY(180deg);
   }
    #container .cards .card .back img{
     height: 35px;
-    background: red;
    }
    #container .stats{
     padding-left: 0;
