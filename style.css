@@ -10,23 +10,28 @@ body{
 }
 
 #container{
-  background: whitesmoke;
-  margin: 0 auto 0 auto;
   position: relative;
   top: 20%;
-  box-sizing: border-box;
+  background: whitesmoke;
+  margin: 0 auto 0 auto;
   width: 500px;
-  height: 50%;
-  border-radius: 5px;
-  box-shadow: 3.5px 3px rgba(0, 0, 0, 0.374);
-  display: grid;
-  padding: 30px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  
+  height: 55vh;
+  padding: 30px 30px 10px 30px;
+  box-shadow: 3.5px 3px #0000005f;
 }
 
-#container .card{
+#container .cards{
+  margin: 0 auto 0 auto;
+  width: 500px;
+  height: 80%;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#container .cards .card{
+  border-radius: 9px;
   position: relative;
   background-color: whitesmoke;
   box-shadow: -3.5px 3px 6px 0.5px #0000002e;
@@ -36,6 +41,49 @@ body{
   transition: all 0.5s ease;
 }
 
+#container .stats{
+  margin-top: 25px;
+  box-shadow: -1.5px 2px 4px 0.5px #0000002e;
+  display:grid;
+  padding: 10px 0 10px 35px;
+  grid-template-columns: 1fr 0.5fr;
+  box-sizing: border-box;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#container .stats .info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px 0 10px;
+  position: relative;
+}
+
+#container .stats .info .split{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+#container .stats button{
+  color: #6c60eb;
+  border: 1px solid #6c60eb;
+  border-radius: 5px;
+  width: 70%;
+  margin: 0 auto;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+
+#container .stats button:hover{
+  cursor: pointer;
+  color: #fff;
+  background-color: #6c60eb;
+}
 
 .shake {
   outline: 1px double rgba(255, 72, 72, 0.22);
@@ -117,18 +165,40 @@ transform: rotateY(180deg);
 }
 
 @media (max-width: 500px){
-  #container .card{
-    height: 75%;
-    width: 75%;
-  }
   #container{
-    width: 89%;
+    width: 300px;
   }
-  .card .back img{
-    display: block;
+  #container .cards{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 250px;
+  }
+  #container .cards .card{
+    width: 75%;
+    height: 75%;
+  }
+  #container .cards .card .front i{
+    font-size: 20px;
+  }
+   #container .cards .card .back img{
+    margin-top: 50%;
     height: 35px;
-    margin: 35% auto;
-  }
+   }
+   #container .stats{
+    padding-left: 0;
+    font-size: 12.5px;
+   }
+   #container .stats .info{
+    padding-right: 20px;
+    padding-left: 30px;
+   }
+   #container .stats button{
+    font-size: 12px;
+    text-align: center;
+    width: 84%;
+   }
+   .split{
+    display: none;
+   }
 }
 
 

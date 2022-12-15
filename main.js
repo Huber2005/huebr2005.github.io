@@ -21,6 +21,9 @@ function shuffleCard(){
     cards.forEach(card => {
         card.classList.remove("flip")
     });
+    accuracy = 0;
+    errorspan.textContent = 0
+    errors = 0;
     matched = 0;
     disableDeck = false;
     for (let y = 0; y < 4; y++){
@@ -39,7 +42,6 @@ for (let i = 1; i < 16; i++){
     }
 }
 var imagecard;
-console.log(arr)
 
 for (let y = 0; y < 4; y++){
     for (let x = 0; x < 4; x++){
@@ -122,12 +124,19 @@ function resultrnd(arrandom){
 }
 
 const cards = document.querySelectorAll(".card");
-
+const errorspan = document.querySelector(".errors")
+const accuracyspan = document.querySelector(".accuracy")
+let accuracy = 0;
+let errors = 0;
 let matched = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
-
+let firstCardClicked = ""
 function flipCard({target: clickedCard}) {
+    if (firstCardClicked == ""){
+        firstCardClicked = clickedCard
+        console.log(firstCardClicked)
+    }
     if(cardOne !== clickedCard && !disableDeck) {
         clickedCard.classList.add("flip");
         if(!cardOne) {
@@ -145,6 +154,9 @@ function matchCards(img1, img2) {
     if(img1 === img2) {
         right.play()
         matched++;
+        
+        accuracy =  ((matched * 2) / (errors  + (matched * 2))* 100);
+        accuracyspan.textContent = Math.floor(accuracy)
         if(matched == 8) {
             allRight.play()
             setTimeout(() => {
@@ -157,6 +169,11 @@ function matchCards(img1, img2) {
         return disableDeck = false;
     }
     wrong.play()
+    errors++
+    errorspan.textContent = errors.toString()
+
+    accuracy =  ((matched * 2) / (errors  + (matched * 2))* 100);
+    accuracyspan.textContent = Math.floor(accuracy)
     setTimeout(() => {
         cardOne.classList.add("shake");
         cardTwo.classList.add("shake");
